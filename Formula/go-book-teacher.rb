@@ -10,19 +10,19 @@ class GoBookTeacher < Formula
 
   if OS.mac?
     url "https://github.com/hiromaily/go-book-teacher/releases/download/v1.0.0/go-book-teacher_1.0.0_Darwin_x86_64.tar.gz"
-    sha256 "4f27e5915385f28cf3ba435a1d5dbe885776d9edaf646b17dad6ec0724b19479"
+    sha256 "6a2735c7d53de94406af764e44acbb8e454849e22cb5c4d29a6099c9dfc7e1dc"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/hiromaily/go-book-teacher/releases/download/v1.0.0/go-book-teacher_1.0.0_Linux_x86_64.tar.gz"
-    sha256 "2fddf64ff3e826c6f2b162ab291575f5c26ea05fdb127bd1e348a771981e9da5"
+    sha256 "f28aa3025dfa4a7f521ae770c2d113e04c8ba55fad81c9e29eceef4c4b5b6da7"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/hiromaily/go-book-teacher/releases/download/v1.0.0/go-book-teacher_1.0.0_Linux_arm64.tar.gz"
-    sha256 "13da353881a883aed2144e60ea773225e7fa609bd1e4a281a46dbac904ad4520"
+    sha256 "6eb249a576dc7d7bdf4b000a18bedab05ace595bcd8e6a9979ac028ba734eb36"
   end
 
   def install
-    bin.install Dir['bin/*']
+    bin.install Dir['*']
   end
 
   test do
