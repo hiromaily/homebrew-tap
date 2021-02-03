@@ -10,15 +10,15 @@ class GoBookTeacher < Formula
 
   if OS.mac?
     url "https://github.com/hiromaily/go-book-teacher/releases/download/v1.0.0/go-book-teacher_1.0.0_Darwin_x86_64.tar.gz"
-    sha256 "7897e9827b1a7540e63df1483d81ef2ac1c851b6af0b49ea815c28fe181418ad"
+    sha256 "74ab70f6a6c2680367b33233227a8b3c3b12f9a7e890ab81bb00eda5b2959acf"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/hiromaily/go-book-teacher/releases/download/v1.0.0/go-book-teacher_1.0.0_Linux_x86_64.tar.gz"
-    sha256 "f5e42a4f7482dbd625771c705cc39ad452a7809ac5108f9f13eebd30ad31bd6c"
+    sha256 "e770788262ecde42a8db27060fbbc44c1f9ee76742baa30358224f36d93b2c5a"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/hiromaily/go-book-teacher/releases/download/v1.0.0/go-book-teacher_1.0.0_Linux_arm64.tar.gz"
-    sha256 "3712c4acbc92268af1b20b743df6b20b7c36391467e568d1230e8461f82f1c39"
+    sha256 "5d701c72b24220e24e222fc14804eff05c997a9f49b7c5ee5ae773bbd4880cef"
   end
 
   def install
