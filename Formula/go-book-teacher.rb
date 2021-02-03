@@ -10,21 +10,31 @@ class GoBookTeacher < Formula
 
   if OS.mac?
     url "https://github.com/hiromaily/go-book-teacher/releases/download/v1.0.0/go-book-teacher_1.0.0_Darwin_x86_64.tar.gz"
-    sha256 "fccecb980f5a997174caf5b78cce1acda602d129efc899e939036b443433b2ca"
+    sha256 "7c129e73cb4264d2581247d1dfe31aa6bf1753b878b3368109cdb1165eb0f2bc"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://github.com/hiromaily/go-book-teacher/releases/download/v1.0.0/go-book-teacher_1.0.0_Linux_x86_64.tar.gz"
-    sha256 "5ae7de5949391750bc4b23b69c66a4b9ab2e9ee5cc2bd0009d7ef033106f74e7"
+    sha256 "8d52c1fe4faca4ab5c235b4a6010f42839c500ec04e24a2abff3864ce818649c"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://github.com/hiromaily/go-book-teacher/releases/download/v1.0.0/go-book-teacher_1.0.0_Linux_arm64.tar.gz"
-    sha256 "67a815a7ca5bf202dbf56d0016e174332c5ac93441e374b716ebf331c493a8eb"
+    sha256 "dad823816b36912ff637ff51415ce3ee6e1faefb20c4e290f55f124141b5aa64"
   end
 
   def install
     bin.install "book-teacher"
     (etc/"book-teacher").install "book-teacher.toml"
     (etc/"book-teacher").install "book-teacher.json"
+  end
+
+  def caveats; <<~EOS
+    book-teacher has been installed, have fun!
+    config file has been installed in /usr/local/etc/book-teacher/book-teacher.toml
+    json file has been installed in /usr/local/etc/book-teacher/book-teacher.json
+    please modify these files as you want.
+    More information:
+      https://github.com/hiromaily/go-book-teacher
+  EOS
   end
 
   test do
