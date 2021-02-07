@@ -5,20 +5,20 @@
 class GoGoogleHome < Formula
   desc "speak message on Google Home"
   homepage "https://github.com/hiromaily/go-google-home"
-  version "1.0.0"
+  version "2.0.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/hiromaily/go-google-home/releases/download/v1.0.0/go-google-home_1.0.0_Darwin_x86_64.tar.gz"
-    sha256 "a7e1041af2d9d852fe32661b89a6c6ff8f712a8435d8f9121a2c541f1e9a6f71"
+    url "https://github.com/hiromaily/go-google-home/releases/download/v2.0.0/go-google-home_2.0.0_Darwin_x86_64.tar.gz"
+    sha256 "5f537e6bf8693486b8a9376d78b965a51699412818d6047413303485461bdf60"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/hiromaily/go-google-home/releases/download/v1.0.0/go-google-home_1.0.0_Linux_x86_64.tar.gz"
-    sha256 "b39887a76d22ea9267b317778b7c8f523ba25308e6c481e9b6f0d3bce02993b3"
+    url "https://github.com/hiromaily/go-google-home/releases/download/v2.0.0/go-google-home_2.0.0_Linux_x86_64.tar.gz"
+    sha256 "786b57f1175e00f3550e3fb70fa84acdc31b0ef29ec4a9719014285346514187"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/hiromaily/go-google-home/releases/download/v1.0.0/go-google-home_1.0.0_Linux_arm64.tar.gz"
-    sha256 "a955eb77a533945efcbc82dc04b9feca233812287be3b98d9afde45d42c51779"
+    url "https://github.com/hiromaily/go-google-home/releases/download/v2.0.0/go-google-home_2.0.0_Linux_arm64.tar.gz"
+    sha256 "22484add0b626a49e79b6406e1d9c90896811929458a1a4babc10d220891a9f2"
   end
 
   def install
