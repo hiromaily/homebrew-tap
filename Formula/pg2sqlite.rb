@@ -3,33 +3,33 @@
 
 # Homebrew formula for pg2sqlite
 # Repository: https://github.com/hiromaily/homebrew-tap
-class YamlLint < Formula
-  desc "A fast YAML linter written in Rust"
+class Pg2sqlite < Formula
+  desc "PostgreSQL 16 DDL to SQLite3 DDL schema converter"
   homepage "https://github.com/hiromaily/pg2sqlite-rs"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     on_intel do
       url "https://github.com/hiromaily/pg2sqlite-rs/releases/download/v#{version}/pg2sqlite-x86_64-apple-darwin.tar.gz"
-      sha256 "58c959aa84bc0f3432838aac7e96ba688dddc6305bea169b1596cbf950b180f5"
+      sha256 "24d34e1096e795c1cc4366a9dad254eedb9082a11177bb7078c347fce32afa60"
     end
 
     on_arm do
       url "https://github.com/hiromaily/pg2sqlite-rs/releases/download/v#{version}/pg2sqlite-aarch64-apple-darwin.tar.gz"
-      sha256 "c94c14162ef4fc83035c55f15f55e5666b4606af98b51a3a00f0f53df6592b84"
+      sha256 "cd9a6dd78ab4b8618e8a59a9b94527efbddfa20be9e39472b718526ce0b33e79"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/hiromaily/pg2sqlite-rs/releases/download/v#{version}/pg2sqlite-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "07c04e551ba18b2355218bf95a079963e7dfefdc0c442347259c2bfba6727ed9"
+      sha256 "3f899dc6b452837156d1df57f923d3f7df81603425ff6894ea245ec1832e541d"
     end
 
     on_arm do
       url "https://github.com/hiromaily/pg2sqlite-rs/releases/download/v#{version}/pg2sqlite-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "e8e05dc39b4c36c2d8ad868a4ea720c8881857861dd8c5e87d66b3a4aef96009"
+      sha256 "525b4ae91c2e3df4cd98e204aab5cb1379aa18f137dc2cd284887461574dca70"
     end
   end
 
@@ -38,15 +38,16 @@ class YamlLint < Formula
   end
 
   test do
-    # Create a test YAML file
-    (testpath/"test.yaml").write <<~EOS
-      key: value
-      list:
-        - item1
-        - item2
+    # Create a test PostgreSQL DDL file
+    (testpath/"test.sql").write <<~EOS
+      CREATE TABLE users (
+        id INTEGER PRIMARY KEY,
+        name TEXT NOT NULL
+      );
     EOS
 
-    # Run pg2sqlite and check it exits successfully
-    system "#{bin}/pg2sqlite", testpath/"test.yaml"
+    # Run pg2sqlite and check it produces output
+    output = shell_output("#{bin}/pg2sqlite -i #{testpath}/test.sql")
+    assert_match "CREATE TABLE", output
   end
 end
