@@ -6,30 +6,30 @@
 class Pg2sqlite < Formula
   desc "PostgreSQL 16 DDL to SQLite3 DDL schema converter"
   homepage "https://github.com/hiromaily/pg2sqlite-rs"
-  version "0.1.2"
+  version "0.1.3"
   license "MIT"
 
   on_macos do
     on_intel do
       url "https://github.com/hiromaily/pg2sqlite-rs/releases/download/v#{version}/pg2sqlite-x86_64-apple-darwin.tar.gz"
-      sha256 "3cfcebc27c9f868e2b4838a8a747ca58933ac06ebba821518a25bbcabbdc325c"
+      sha256 "bb78b96dd1fd0cf9caa5f1e9ca327dc0db38f6a6048cb05e3d0b04e377b53518"
     end
 
     on_arm do
       url "https://github.com/hiromaily/pg2sqlite-rs/releases/download/v#{version}/pg2sqlite-aarch64-apple-darwin.tar.gz"
-      sha256 "02c6899bd7a2e3e4b15b89146ee4dc0e3dae009fb4623d582888c2d4ff531c28"
+      sha256 "5f9be61869ebf183e26bc4c11d5365958b49e57fae8ec236314b6907faa6b812"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/hiromaily/pg2sqlite-rs/releases/download/v#{version}/pg2sqlite-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "775fee5b753f8ddbae32296d6d192ff97318fd0cdec8dad1fb7333f2b6d8250c"
+      sha256 "9af4f9d4f95d91cce5aad09e6f5985ec689482cf21f839d6b1b7a63e50d8593d"
     end
 
     on_arm do
       url "https://github.com/hiromaily/pg2sqlite-rs/releases/download/v#{version}/pg2sqlite-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "186946a607b40d3160b7204f00dae39e6ff4b055c7384d12d83c178bfbf46275"
+      sha256 "68d3d26e56baec27c3c6a5729af68281fbc170909034bc83c43ee6f52b8dd7d7"
     end
   end
 
