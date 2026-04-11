@@ -5,21 +5,21 @@
 class DocsSsot < Formula
   desc "Documentation Single Source of Truth (SSOT) generator"
   homepage "https://github.com/hiromaily/docs-ssot"
-  version "0.11.0"
+  version "0.12.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/hiromaily/docs-ssot/releases/download/v0.11.0/docs-ssot_0.11.0_darwin_amd64.tar.gz"
-      sha256 "7850452ff23665e1f09d3928a6707171ed6758b02c0cb24b230fbc9db256cb4b"
+      url "https://github.com/hiromaily/docs-ssot/releases/download/v0.12.0/docs-ssot_0.12.0_darwin_amd64.tar.gz"
+      sha256 "6f6a86ef32e82f305b5fdabccacc779ac709c36f4d5f0b4a17d0dc315e2c9622"
 
       define_method(:install) do
         bin.install "docs-ssot"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/hiromaily/docs-ssot/releases/download/v0.11.0/docs-ssot_0.11.0_darwin_arm64.tar.gz"
-      sha256 "db46bd404b6f175aaa95c805448f3a451531fc9c74cf03ed460ebd6ba404a028"
+      url "https://github.com/hiromaily/docs-ssot/releases/download/v0.12.0/docs-ssot_0.12.0_darwin_arm64.tar.gz"
+      sha256 "dfdd2e8dd3a68400c9757e7ed7617772a096a1974f6ff4f50b2e07368e5fc3c1"
 
       define_method(:install) do
         bin.install "docs-ssot"
@@ -29,15 +29,15 @@ class DocsSsot < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hiromaily/docs-ssot/releases/download/v0.11.0/docs-ssot_0.11.0_linux_amd64.tar.gz"
-      sha256 "4449036a7fc0785eb38a3925ba9e309029b64fba243f868ae57748cedc2d8321"
+      url "https://github.com/hiromaily/docs-ssot/releases/download/v0.12.0/docs-ssot_0.12.0_linux_amd64.tar.gz"
+      sha256 "6b1a1563cde7841f8593498378bd452824e6550327ef8891a44c4a6c734761bd"
       define_method(:install) do
         bin.install "docs-ssot"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hiromaily/docs-ssot/releases/download/v0.11.0/docs-ssot_0.11.0_linux_arm64.tar.gz"
-      sha256 "e18499d4845389e1364958ab7387acfc7fcc0a97ebdf46104396ac2eeb6d5d29"
+      url "https://github.com/hiromaily/docs-ssot/releases/download/v0.12.0/docs-ssot_0.12.0_linux_arm64.tar.gz"
+      sha256 "304bbe0abea5c9e22934a6a84a29d23759c4261f1c60f3029b829923ee70903a"
       define_method(:install) do
         bin.install "docs-ssot"
       end
