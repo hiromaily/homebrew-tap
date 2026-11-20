@@ -1,6 +1,6 @@
 cask "passarc" do
-  version "0.1.1"
-  sha256 "259a80c74eb208dfd59e2bf6b1e5d6368548dc34b586f0fe57364ee3edd73d94"
+  version "0.1.2"
+  sha256 "893724ab3f372a3dae69e428aba59aefc553bf8124a830b35bc8a6a8a2e78970"
 
   url "https://github.com/hiromaily/passarc/releases/download/v#{version}/PassArc-arm64.zip"
   name "PassArc"
@@ -16,7 +16,7 @@ cask "passarc" do
   uninstall quit: "local.passarc.app"
 
   caveats <<~EOS
-    Open PassArc once so macOS can discover its Finder extension.
-    Enable PassArcFinder under System Settings > General > Login Items & Extensions > Finder.
+    Open PassArc and follow the prompt to enable PassArcFinder.
+    You can also find PassArcFinder under System Settings > General > Login Items & Extensions > Finder.
   EOS
 end
