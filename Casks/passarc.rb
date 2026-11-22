@@ -1,6 +1,6 @@
 cask "passarc" do
-  version "0.5.1"
-  sha256 "bb3dbadc6317ee452ca4af094d427c67735874862ba5ed175c7530734c0b257c"
+  version "0.6.0"
+  sha256 "f8ed8eb251e4f49c43265ec3a7362c8907ec20ab4f7d60ca8b8534f730be832a"
 
   url "https://github.com/hiromaily/passarc/releases/download/v#{version}/PassArc-arm64.zip"
   name "PassArc"
